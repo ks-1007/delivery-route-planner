@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import DeliveryRoutePlanner from "./DeliveryRoutePlanner";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  const locations = [
+    { name: "Aman", lat: 12.91455, lng: 77.62545 },
+    { name: "C1", lat: 12.92045, lng: 77.63154 },
+    { name: "C2", lat: 12.915465, lng: 77.625955 },
+    { name: "R1", lat: 12.91854, lng: 77.6295, pt: 20 },
+    { name: "R2", lat: 12.91256, lng: 77.62354, pt: 15 },
+  ];
+
+  return <DeliveryRoutePlanner locations={locations} />;
 }
-
-export default App;
