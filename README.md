@@ -1,71 +1,60 @@
-# Getting Started with Create React App
+# Delivery Optimizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application designed to optimize the delivery route for a delivery executive named Aman. The primary objective is to deliver a batch of orders from different locations in the shortest possible time.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+### Approach
 
-### `npm start`
+1. **Coordinates and Distances:**
+   - Define coordinates for Aman, Consumers (C1, C2), and Restaurants (R1, R2).
+   - Utilize the Haversine formula to calculate distances between these locations.
+   - **Assumed data:
+   - 1. { name: "Aman", lat: 12.91455, lng: 77.62545 }
+     2. { name: "C1", lat: 12.92045, lng: 77.63154 }
+     3. { name: "C2", lat: 12.915465, lng: 77.625955 }
+     4. { name: "R1", lat: 12.91854, lng: 77.6295, pt: 20 }
+     5. { name: "R2", lat: 12.91256, lng: 77.62354, pt: 15 }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Time Estimation:**
+   - Assume Aman, R1, and R2 commence preparing and delivering orders simultaneously.
+   - Consider the average time (pt1, pt2) it takes for each restaurant to prepare a meal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Travel Time:**
+   - Calculate travel time based on an average speed of 20 km/hr using the Haversine distance.
 
-### `npm test`
+4. **Optimization:**
+   - Implement an optimization algorithm to determine the most efficient route for Aman to deliver the orders promptly.
+   - Greedy algorithms or genetic algorithms could be considered based on the complexity of the problem.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Assumptions
 
-### `npm run build`
+1. **Simultaneous Start:**
+   - Assume Aman, R1, and R2 start preparing and delivering orders at the exact same time.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Immediate Confirmation:**
+   - Assume immediate confirmation from Aman, R1, and R2 without any delays or coordination issues.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Constant Speed:**
+   - Utilize an average speed of 20 km/hr for simplicity. Real-world travel time may vary.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **No Road Constraints:**
+   - Ignore actual road distance and confirmation delays for simplicity.
 
-### `npm run eject`
+5. **Simplistic Time Estimation:**
+   - Assume a constant average time for preparing meals at R1 and R2.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. **Single Batch:**
+   - Consider all orders as part of a single batch for optimization.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+7. **Ideal Conditions:**
+   - Contemplate an ideal scenario without external factors like traffic, weather, or unexpected delays.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These assumptions simplify the problem to focus on the core aspects of route optimization. In a real-world scenario, additional factors and a more sophisticated algorithm may be necessary for accurate and practical results.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Instructions
 
-## Learn More
+1. Clone the repository:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# delivery-route-planner
+   ```bash
+   git clone https://github.com/your-username/delivery-optimizer.git
